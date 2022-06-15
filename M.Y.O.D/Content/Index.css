@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Ceviche+One&displayfamily=Arima+Madurai:wght@500&family=Chakra+Petch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+:root {
+    --bg-color: black;
+    --bd-color: black;
+    --bn-color: goldenrod;
+    --ft-color: white;
+}
+nav {
+    display: flex;
+    flex-wrap: nowrap;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background-color: var(--bg-color);
+    text-align: center;
+    font-family: 'Ceviche One', cursive;
+    font-size: 22px;
+    border-bottom: 3px solid var(--bd-color);
+    justify-content: space-evenly;
+    font-weight: lighter;
+    align-items:baseline;
+}
+.dropbtn{
+    display:none;
+}
+.logo {
+    color: var(--ft-color);
+    font-size: 32px;
+    font-family: 'Luxurious Roman', cursive;
+    font-style: oblique;
+    flex-wrap: nowrap;
+}
+.logo img{
+    width:17%;
+}
+.dropdown-content {
+    text-decoration: none;
+    color: var(--ft-color);
+    padding: 10px;
+    justify-content: space-between;
+    border-bottom: 3px solid transparent;
+}
+.dropdown-content .a:hover {
+    color:goldenrod;
+    border-bottom: 3px solid goldenrod;
+}
+.dropdown-content a {
+    text-decoration: none;
+    color: var(--ft-color);
+    padding: 10px 20px;
+}
+.a-log:hover {
+    background-color: black;
+    color: goldenrod;
+}
+.Register{
+    display: flex;
+}
+.a-log {
+    background-color: var(--bd-color);
+    border-radius: 15px;
+    border: solid 2px var(--bn-color);
+    text-decoration: none;
+    text-align: center;
+    color: var(--ft-color);
+    padding: 8px 15px;
+    margin: 5px;
+}
+.bali{
+    width: 100%;
+    height: 500px;
+    margin-top: 50px;
+}
+.MenSec {
+    width: 95%;
+    margin: auto;
+    border: 4px dashed var(--bd-color);
+    padding: 20px;
+    padding-bottom:40px;
+    border-radius: 15px;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.Footer {
+    background-color: var(--bg-color);
+    border-top: 3px solid var(--bd-color);
+    text-align: center;
+    color: var(--ft-color);
+    padding: 5px;
+    margin: 0px;
+}
+.Footer ul {
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+}
+.Footer ul li {
+   list-style: none;
+   text-align: center;
+   color: var(--ft-color);
+}
+.Footer ul li a i {
+   text-align: center;
+   border: 1px var(--ft-color) solid;
+   padding: 5px;
+   border-radius: 10px;
+   color: var(--ft-color);
+}
+.Footer h1 {
+    color:var(--ft-color);
+    text-shadow: 0.5px 0.5px 20px var(--ft-color);
+    font-size: 65px;
+    font-family: 'Neonderthaw', cursive;
+}
+.Footer p {
+    margin: auto;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Luxurious Roman', cursive;
+    color: var(--ft-color);
+}
+.FB:hover {
+    color: mediumblue;
+    cursor: pointer;
+    background: var(--ft-color);
+}
+.TW:hover {
+    color: deepskyblue;
+    cursor: pointer;
+    background: White;
+}
+.LI:hover {
+    color: darkblue;
+    cursor: pointer;
+    background: var(--ft-color);
+}
+.YT:hover {
+    color: red;
+    cursor: pointer;
+    background: var(--ft-color);
+}
+.font {
+    font-size: xx-large;
+    margin: 10px;
+}
+footer .bottom-footer {
+    text-align: center;
+    background-color: var(--bn-color);
+    color: var(--bd-color);
+    font-size: medium;
+}
+footer .bottom-footer p{
+    padding-top:20px;
+    font-size:23px;
+    font-weight:500;
+    font-family: 'EB Garamond', serif;
+}
+footer .Footer ul li a {
+    text-decoration: none;
+    color: var(--ft-color);
+    font-size: 20px;
+}
+footer .Footer ul li a:hover {
+    text-decoration: underline;
+}
+@media(max-width:655px) {
+    .FB {
+        font-size: 22px;
+    }
+
+    .TW {
+        font-size: 22px;
+    }
+
+    .YT {
+        font-size: 22px;
+    }
+
+    .LI {
+        font-size: 22px;
+    }
+
+    footer .Footer ul li a {
+        font-size: 12px;
+    }
+
+    .Footer h1 {
+        font-size:45px;
+    }
+    .Footer p{
+        font-size:20px;
+    }
+    .Itemss {
+        max-width: fit-content;
+    }
+
+    .form-detailss {
+        max-width: 90%;
+    }
+
+    .inputt {
+        max-width: 60%;
+    }
+
+    .logo {
+        font-size: 33px;
+    }
+    .logo img{
+        width:19%;
+    }
+    .a-log {
+        font-size: 15px;
+        padding: 4px 8px;
+        margin: auto;
+    }
+
+    .dropbtn {
+        font-size: 13px;
+        margin: 8px auto;
+    }
+
+    .dropdown-content {
+        width: 150px;
+        font-size: 15px;
+    }
+
+    footer .bottom-footer p {
+        font-size: 12px;
+    }
+
+}
+
+@media(max-width:1049px){
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color:var(--bg-color);
+        right:55%;
+        left:-165%;
+        top:103%;
+        width:190px;
+        border:2px solid var(--bd-color);
+    }
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        z-index:5;
+    }
+    .dropdown-content a {
+        color: var(--ft-color);
+        padding: 10px 14px;
+        text-decoration: none;
+        display: block;
+        z-index: 5;
+    }
+
+    .dropbtn {
+        display: block;
+        color: var(--ft-color);
+        background-color: var(--bg-color);
+        font-size: 22px;
+        border: none;
+        cursor: pointer;
+        margin: 10px auto;
+        padding:0 2px;
+    }
+
+    .dropbtn:hover,
+    .dropbtn:hover i,
+    .dropbtn:focus,
+    .dropbtn:focus i {
+        background-color: var(--bg-color);
+    }
+
+    .dropdown-content a:hover {
+        border-bottom: 3px solid var(--ft-color);
+        color:var(--ft-color);
+    }
+
+    .SHOW {
+        display: block;
+    }
+}
+@media(max-width:700px){
+    .logo{
+        font-size:160%;
+    }
+}
+@media(max-width:602px) {
+    .logo {
+        font-size: 140%;
+    }
+}
+@media(max-width:370px){
+    .dropbtn{
+        font-size:85%;
+    }
+    .logo{
+        font-size:110%;
+    }
+}
+@media(max-width:305px) {
+    .dropbtn {
+        font-size: 85%;
+    }
+
+    .logo {
+        font-size: 100%;
+    }
+}

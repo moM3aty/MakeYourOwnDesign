@@ -1,0 +1,75 @@
+﻿@model menu_item
+@{
+    ViewBag.Title = "Edit_Menu_Item";
+    Layout = "~/Views/shared/_layout.cshtml";
+}
+@section link{
+    <link href="~/Content/LogIn.css" rel="stylesheet" />
+}
+@section navlog{
+    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-4 col-6">
+        <a style="text-decoration:none;" href="~/Home/Editor"><h1 class="logo">M.Y.O.D S.A</h1></a>
+    </div>
+    <div class="col-xl-7 col-lg-7 col-md-2 col-sm-4 col-2">
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn" style=" border: 3px solid White;
+                                                                       border-radius: 10px;">
+                <i style="margin-right:2px;" class="fas fa-list-ul dropbtn"></i>
+            </button>
+            <div id="show" class="dropdown-content">
+                <a class="li a" href="~/Home/Editor">  التصاميم <i class="fas fa-hammer"></i> </a>
+                <a class="li a" href="#search">  البحث  <i class="fas fa-search"></i> </a>
+                <a class="li a" href="#about">  معلومات عنا  <i class="fas fa-address-card"> </i> </a>
+                <a class="li a" href="#Social">  وسائل التواصل <i class="fas fa-headphones-alt"> </i> </a>
+            </div>
+        </div>
+    </div>
+    <div class="Register col-xl-3 col-lg-3 col-md-4 col-sm-4 col-4">
+        <a class="a-log" href="~/Index/Register"> <i style="margin-right:2px;" class="fas fa-user-plus"> </i> اضافة مستخدم </a>
+        <a class="a-log" href="~/Home/Logout"><i style="margin-right:2px;font-size:20px;" class="fas fa-key"></i> تسجيل الخروج </a>
+    </div>
+}
+
+<p class="Title">تعديل التصميم</p>
+<br />
+<div class="Form">
+    @using (Html.BeginForm("Edit", "Home", FormMethod.Post, new { @class = "form-details", @enctype = "multipart/form-data" }))
+    {
+        <div>
+            <img src="~/images/salmalogo.png" alt="M.Y.O.D" style="width: 200px;border-radius:15px;">
+        </div>
+        <div class="Items">
+            @Html.LabelFor(ww => ww.name, htmlAttributes: new { @class = "label", @style = "width:150px;" })
+            @Html.EditorFor(ww => ww.name, new { htmlattributes = new { @class = "input", @placeholder = "الاسم" } })
+            <br />
+            @Html.ValidationMessageFor(ww => ww.name, "", new { @class = " text-danger ", @style = "font-size:16px;" })
+        </div>
+        <div class="Items">
+            @Html.LabelFor(ww => ww.price, htmlAttributes: new { @class = "label", @style = "width:150px;" })
+            @Html.EditorFor(ww => ww.price, new { htmlattributes = new { @class = "input", @placeholder = "السعر" } })
+            <br />
+            @Html.ValidationMessageFor(ww => ww.price, "", new { @class = " text-danger  ", @style = "font-size:16px;" })
+        </div>
+        <div class="Items">
+            @Html.LabelFor(ww => ww.Description, htmlAttributes: new { @class = "label", @style = "width:150px;" })
+            @Html.EditorFor(ww => ww.Description, new { htmlattributes = new { @class = "input", @placeholder = "التفاصيل" } })
+        </div>
+        <div>
+            <label class="label" style="width:150px;margin-right:-40%;">الصوره :</label>
+            <img src="@Url.Content(Model.Path)" height="200" width="150" style="border-radius:25px;border:1px solid #ff6a00;" />
+            <br /><br />
+            <input type="file" name="Myfile" class="input" style="margin-right:30%;" />
+        </div>
+        <div class="Items" style="display:flex;">
+            @Html.LabelFor(ww => ww.Category, htmlAttributes: new { @class = "label", @style = "width:153px;" })
+            <div class="input">
+                @Html.DropDownListFor(ww => ww.CatID, ViewBag.cat as SelectList, htmlAttributes: new { @class = "DropList" })
+            </div>
+        </div>
+        <div>
+            <input type="submit" class="submit" value="تعديل">
+            <p style="padding-top: 10px;">العوده الى @Html.ActionLink("صفحة_التعديل", "Editor", "Home", new { @class = "logIn", @style = " text-decoration: none; color: goldenrod;" })</p>
+        </div>
+    }
+</div>
+@section search{ }

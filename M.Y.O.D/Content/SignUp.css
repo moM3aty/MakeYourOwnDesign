@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+:root {
+    --bg-color: black;
+    --bd-color: black;
+    --bn-color: goldenrod;
+    --ft-color: white;
+}
+.Form {
+    display: flex;
+    flex-wrap:wrap;
+    text-align: center;
+    justify-content: space-evenly;
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    position: relative;
+    padding: 30px;
+    margin-left: -60px;
+    margin-top:-60px;
+}
+.size-radio{
+    font-size:20px;
+}
+.form-details {
+    padding: 20px;
+    border: 2px solid var(--bn-color);
+    border-radius: 25px;
+    box-shadow: 5px 5px 30px var(--bn-color);
+    margin-top: 20px;
+}
+.Items{
+    text-align: right;
+    width: 460px ;
+    display: block;
+    margin: 15px;
+}
+.label{
+    display: inline-block;
+    width: 190px;
+}
+.input{
+    width: 250px;
+    padding: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    border: 1px solid var(--bd-color);
+    border-radius:5px;
+}
+.submit {
+    padding: 10px 15px;
+    font-size: 20px;
+    border: 2px solid var(--bn-color);
+    border-radius: 15px;
+    color: var(--ft-color);
+    background-color: var(--bd-color);
+}
+    .submit:hover {
+        color: var(--bn-color);
+        background-color: var(--bd-color);
+        cursor: pointer;
+    }        
+video{
+    width:700px;
+    height:80%;
+    justify-content:center;
+    margin:auto 10px;
+    border-radius: 25px;
+    border: 2px outset var(--bd-color);
+}
+.logIn {
+    text-decoration: none;
+    color: var(--bn-color);
+}
+.radio{
+    margin-right:10px;
+}
+.validate{
+    font-size:16px;
+}
+.log-media{
+    padding-top:10px;
+}
+@media(max-width:800px) {
+    .Form {
+        margin: auto;
+    }
+
+    video {
+        width: 90%;
+        margin: auto;
+        margin-left: 6%;
+    }
+
+    .label {
+        display: flex;
+        width: fit-content;
+    }
+
+    .Items {
+        width: fit-content;
+        justify-content: center;
+    }
+
+    .input {
+        width: 200px;
+    }
+    .submit{
+        font-size:17px;
+    }
+    .rad{
+        margin:auto;
+    }
+
+}
+@media(max-width:400px){
+    .label{
+        font-size:15px;
+    }
+    .input {
+        width: 160px;
+        margin:auto;
+    }
+    .validate{
+        font-size:12px;
+    }
+    .input::placeholder{
+        font-size:15px;
+    }
+    .size-radio{
+        font-size:15px;
+    }
+    .log-media{
+        font-size:15px;
+    }
+    .submit{
+        padding:5px 10px;
+    }
+
+}

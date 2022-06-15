@@ -1,0 +1,63 @@
+﻿@model ViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/shared/_layout.cshtml";
+}
+@section link{
+}
+@section navlog{
+    <nav class="container-fluid">
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-4 col-6">
+            <a style="text-decoration:none;" href="#Menu"><h1 class="logo">M.Y.O.D S.A</h1></a>
+        </div>
+        <div class="col-xl-7 col-lg-7 col-md-3 col-sm-4 col-2">
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn" style=" border: 3px solid White;
+                                                                       border-radius: 10px;">
+                    <i style="margin-right:2px;" class="fas fa-list-ul dropbtn"></i>
+                </button>
+                <div id="show" class="dropdown-content">
+                    <a class="li a" href="#Menu">  التصاميم <i class="fas fa-hammer"></i> </a>
+                    <a class="li a" href="#search">  البحث  <i class="fas fa-search"></i> </a>
+                    <a class="li a" href="#about">  معلومات عنا  <i class="fas fa-address-card"> </i> </a>
+                    <a class="li a" href="#Social">  وسائل التواصل <i class="fas fa-headphones-alt"> </i> </a>
+                </div>
+            </div>
+        </div>
+        <div class="Register col-xl-2 col-lg-2 col-md-3 col-sm-4 col-4">
+            <a class="a-log" href="~/Index/LogIn">تسجيل الدخول</a>
+        </div>
+    </nav>
+}
+<section class="MenSec " data-aos="zoom-in" data-aos-duration="1500">
+    <label class="Title" data-aos="flip-right" data-aos-duration="1500"> التصاميم </label>
+    <br /><br />
+    @foreach (var item in Model.Categories)
+    {
+        <button class="show" onclick="openFunction();" data-aos="flip-up" data-aos-duration="1500">
+            <p>&clubs; @item.Cat &clubs;</p>
+        </button>
+
+        <div class="product">
+            @foreach (var items in Model.Menu_Items)
+            {
+                if (items.CatID == item.ID)
+                {
+                    <div class="card-Index" data-aos="flip-down" data-aos-duration="1500">
+                        <div>
+                            <img class="img" src="@Url.Content(items.Path)" alt="@items.name">
+                        </div>
+                        <p class="card-text"> @Html.DisplayFor(w => items.name) &hearts;<p>
+                        <p class="card-detail">السعر : @Html.DisplayFor(w => items.price) جنيه</p>
+                        <p class="card-detail">التفاصيل :@Html.DisplayFor(w => items.Description)</p>
+                    </div>
+
+                }
+            }
+        </div>
+        <br />
+    }
+</section>
+@section search{
+    
+}

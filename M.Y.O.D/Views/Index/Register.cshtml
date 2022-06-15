@@ -1,0 +1,96 @@
+﻿@model Register
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/shared/_layout.cshtml";
+}
+@section link{
+    <link href="~/Content/SignUp.css" rel="stylesheet" />
+}
+@section navlog{
+    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-4 col-6">
+        <a style="text-decoration:none;" href="~/Home/Editor"><h1 class="logo">M.Y.O.D S.A</h1></a>
+    </div>
+    <div class="col-xl-7 col-lg-7 col-md-3 col-sm-5 col-3">
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn" style=" border: 3px solid White;
+                                                                       border-radius: 10px;">
+                <i style="margin-right:2px;" class="fas fa-list-ul dropbtn"></i>
+            </button>
+            <div id="show" class="dropdown-content">
+                <a class="li a" href="~/Home/Editor">  التصاميم <i class="fas fa-hammer"></i> </a>
+                <a class="li a" href="#search">  البحث  <i class="fas fa-search"></i> </a>
+                <a class="li a" href="#about">  معلومات عنا  <i class="fas fa-address-card"> </i> </a>
+                <a class="li a" href="#Social">  وسائل التواصل <i class="fas fa-headphones-alt"> </i> </a>
+            </div>
+        </div>
+    </div>
+    <div class="Register col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
+        <a class="a-log" href="~/Home/Logout"><i style="margin-right:2px;font-size:20px;" class="fas fa-key"></i> تسجيل الخروج </a>
+    </div>
+}
+<!-- SignUp -->
+<section class="MenSec">
+    <p class="Title">اضافة مستخدم جديد</p>
+    <br />
+    <div class="Form">
+        <div>
+            @using (Html.BeginForm("Register", "Index", FormMethod.Post, new { @class = "form-details" }))
+            {
+                <div>
+                    <img src="~/images/Salmalogo.png" alt="M.Y.O.D" style="width: 200px;border-radius:15px">
+                </div>
+                <div class="Items">
+                    @Html.LabelFor(ww => ww.Fname, htmlAttributes: new { @class = "label" })
+                    @Html.EditorFor(ww => ww.Fname, new { htmlattributes = new { @class = "input", @placeholder = "الاسم الاول" } })
+                    <br />
+                    @Html.ValidationMessageFor(ww => ww.Fname, "", new { @class = " text-danger validate" })
+                </div>
+                <div class="Items">
+                    @Html.LabelFor(ww => ww.Lname, htmlAttributes: new { @class = "label" })
+                    @Html.EditorFor(ww => ww.Lname, new { htmlattributes = new { @class = "input", @placeholder = "اسم العائله" } })
+                    <br />
+                    @Html.ValidationMessageFor(ww => ww.Lname, "", new { @class = " text-danger  validate" })
+                </div>
+                <div class="Items">
+                    @Html.LabelFor(ww => ww.Email, htmlAttributes: new { @class = "label" })
+                    @Html.EditorFor(ww => ww.Email, new { htmlattributes = new { @class = "input", @placeholder = "الايميل" } })
+                    <br />
+                    @Html.ValidationMessageFor(ww => ww.Email, "", new { @class = " text-danger  validate" })
+                </div>
+                <div class="Items">
+                    @Html.LabelFor(ww => ww.pwd, htmlAttributes: new { @class = "label" })
+                    @Html.EditorFor(ww => ww.pwd, new { htmlattributes = new { @class = "input", @placeholder = "الباسورد" } })
+                    <br />
+                    @Html.ValidationMessageFor(ww => ww.pwd, "", new { @class = " text-danger  validate" })
+                </div>
+                <div class="Items">
+                    @Html.LabelFor(ww => ww.Cpwd, htmlAttributes: new { @class = "label" })
+                    @Html.EditorFor(ww => ww.Cpwd, new { htmlattributes = new { @class = "input", @placeholder = "تأكيد الباسورد" } })
+                    <br />
+                    @Html.ValidationMessageFor(ww => ww.Cpwd, "", new { @class = " text-danger  validate" })
+                </div>
+                <div class="Items">
+                    @Html.LabelFor(ww => ww.DOB, htmlAttributes: new { @class = "label" })
+                    @Html.EditorFor(ww => ww.DOB, new { htmlattributes = new { @class = "input", @placeholder = "تاريخ الميلاد" } })
+                    <br />
+                    @Html.ValidationMessageFor(ww => ww.DOB, "", new { @class = " text-danger  validate" })
+                </div>
+                <div class="Items">
+                    @Html.LabelFor(ww => ww.Gender, htmlAttributes: new { @class = " label" })
+                    <label class="radio size-radio"> ذكر   : @Html.RadioButton("Gender", "Man", htmlAttributes: new { @class = "rad" })</label>
+                    <label class="size-radio"> أنثى : @Html.RadioButton("Gender", "Woman")</label>
+                    <br />
+                    @Html.ValidationMessageFor(ww => ww.Gender, "", new { @class = " text-danger validate " })
+                </div>
+                <div>
+                    <input type="submit" class="submit" value="اضافة مستخدم">
+                    <p class="log-media">العوده الى <a href="~/Home/Editor" class="logIn">صفحة_التعديل</a></p>
+                </div>
+            }
+        </div>
+        <video autoplay muted controls>
+            <source src="~/media/design.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
+@section search{ }

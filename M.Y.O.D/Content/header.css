@@ -1,0 +1,276 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap');
+
+:root {
+    --bg-color: black;
+    --bd-color: black;
+    --bn-color: goldenrod;
+    --ft-color: white;
+}
+.container {
+    min-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to left top, white, black);
+}
+
+.container .card {
+    height: 500px;
+    width: 95%;
+    border-radius: 10px;
+    background-color: transparent;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    cursor: pointer
+}
+
+.container .card .form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.container .card .left-side {
+    position:relative;
+    width: 40%;
+    background-color: transparent;
+    height: 100%;
+    margin:auto
+}
+
+.form .left-side .medium-div {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    position: relative;
+    padding: 20px 45px;
+    margin: auto;
+}
+.form .left-side .medium-div img{
+    width:95%;
+    border-radius:20px;
+}
+
+.form .left-side .medium-div h1 {
+    color:var(--ft-color);
+    margin: 25% auto 5%;
+    font-size: 30px;
+    font-family: 'Luxurious Roman', cursive;
+    font-weight:400;
+    text-align:center;
+}
+
+.form .left-side .medium-div p {
+    margin: auto;
+    text-align: center;
+    font-size: 35px;
+    font-family: Arial;
+    color: var(--ft-color);
+}
+
+.container .card .right-side {
+    width: 60%;
+    background-color: #000;
+    height: 100%;
+    z-index: 1;
+}
+
+@media (max-width:950px) {
+    .container{
+        min-height:400px;
+    }
+    .container .card {
+        max-width: 95%;
+        height:fit-content;
+        margin:auto;
+    }
+
+    .container .card .right-side {
+        display:none;
+    }
+
+    .container .card .left-side {
+        width: 100%;        
+    }
+    
+    .container .card .left-side h1{
+        font-size:400%;
+        margin:auto;
+    }
+    .container .card .left-side h1 img{
+        width:10%;
+    }
+    .container .card .left-side p{
+           font-size:200%;
+    }
+}
+
+@media(max-width:550px){
+    .form .left-side .medium-div h1 img {
+        width: 16%;
+    }
+    .form .left-side .medium-div h1{
+        font-size:50px;
+    }
+
+}
+    @media(max-width:410px) {
+        .container .card .left-side h1 {
+            font-size: 200%;
+        }
+
+        .container .card .left-side p {
+            font-size: 100%;
+        }
+    }
+    /*About Us*/
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+    .aboutSection {
+        padding: 20px 0;
+        margin: auto;
+        border: 4px dashed var(--bd-color);
+        width: 95%;
+        border-radius: 25px;
+    }
+
+    .about {
+        justify-content: space-around;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card-about {
+        align-items: center;
+        margin: 50px;
+        width: 350px;
+        height: 350px;
+        transform-style: preserve-3d;
+        perspective: 500px;
+        border: none;
+        background-color: inherit;
+    }
+
+        .card-about .face {
+            position: absolute;
+            color: var(--ft-color);
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            box-shadow: 0 15px 35px var(--bd-color);
+            border-radius: 15px;
+            background-color: var(--bg-color);
+            transform-style: preserve-3d;
+            transition: 0.5s ease-in-out;
+            backface-visibility: hidden;
+            border-top: 1px solid #ddd;
+            border-left: 1px solid #ddd;
+        }
+
+            .card-about .face.front-face,
+            .card-about .face.back-face {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+                .card-about .face.front-face .profile {
+                    width: 230px;
+                    height: 230px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+        .card-about .face {
+            justify-content: center;
+        }
+
+            .card-about .face.front-face .name {
+                letter-spacing: 1px;
+                font-size: 22px;
+            }
+
+    .card .face.front-face .designation {
+        font-size: 22px;
+        color: var(--ft-color);
+        letter-spacing: 0.8px;
+    }
+
+    .card-about:hover .face.front-face {
+        transform: rotateY(180deg);
+    }
+
+    .card-about .face.back-face {
+        position: absolute;
+        background-color: var(--bg-color);
+        transform: rotateY(180deg);
+        padding: 20px 30px;
+        text-align: center;
+        user-select: none;
+    }
+
+        .card-about .face.back-face .fa-quote-left {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            font-size: 40px;
+        }
+
+        .card-about .face.back-face .fa-quote-right {
+            position: absolute;
+            bottom: 35px;
+            right: 25px;
+            font-size: 40px;
+        }
+
+    .card-about:hover .face.back-face {
+        transform: rotateY(360deg);
+    }
+
+    @media(max-width:450px) {
+        .card-about {
+            margin-bottom: -50px;
+        }
+
+            .card-about .face.front-face {
+                min-width: 115%;
+                padding: 10px;
+                height: fit-content;
+                margin-left: -7.5%;
+                margin-top: -5%;
+            }
+
+                .card-about .face.front-face .profile {
+                    width: 200px;
+                    height: 200px;
+                }
+
+                .card-about .face.front-face .name {
+                    font-size: 17px;
+                }
+
+                .card-about .face.front-face .designation {
+                    font-size: 15px;
+                }
+    }
+
+    @media(max-width:320px) {
+        .card-about {
+            margin-bottom: -100px;
+        }
+
+            .card-about .face.front-face .profile {
+                width: 150px;
+                height: 150px;
+            }
+    }

@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+:root {
+    --bg-color: black;
+    --bd-color: black;
+    --bn-color: goldenrod;
+    --ft-color: white;
+}
+.Form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+}
+.form-details {
+    padding: 30px;
+    border: 2px solid var(--bn-color);
+    border-radius: 25px;
+    box-shadow: 5px 5px 30px var(--bn-color);
+    width: fit-content;
+    margin: auto;
+}
+.bali-form-img{
+    width:200px;
+    border-radius:15px;
+}
+.Items {
+    text-align: center;
+    display: block;
+    margin: 15px auto;
+}
+.label{
+    display: inline-block;
+    width: 105px;
+    text-align: left;
+    font-size:23px;
+}
+.input{
+    width: 350px;
+    padding: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    border: 1px solid var(--bd-color);
+    border-radius:5px;
+    justify-content: center;
+}
+.submit {
+    padding: 10px 15px;
+    font-size: 20px;
+    border: 2px solid var(--bn-color);
+    border-radius: 15px;
+    color: var(--ft-color);
+    background-color: var(--bd-color);
+}
+    .submit:hover {
+        color: var(--bn-color);
+        cursor: pointer;
+    }
+.s-how {
+    display:flex;
+    text-align:center;
+    justify-content:center;
+}
+.DropList {
+    width: 100%;
+    border-style: none;
+    text-align: center;
+    font-size: 25px;
+    cursor:pointer;
+}
+@media(max-width:580px){
+    .Form{
+        font-size:15px;
+    }
+    .bali-form-img{
+        width:60%;
+    }
+    .label {
+        width: 70%;
+        font-size: 100%;
+    }
+    .input{
+        width:70%;
+        font-size:80%;
+    }
+    .submit{
+        padding:5px 10px;
+        font-size:80%;
+    }
+    .form-details{
+        width:80%;
+    }
+}

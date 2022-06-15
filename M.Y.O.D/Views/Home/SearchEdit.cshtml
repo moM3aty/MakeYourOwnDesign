@@ -1,0 +1,94 @@
+﻿@model IEnumerable<menu_item>
+@{
+    ViewBag.Title = "SearchEdit";
+    Layout = "~/Views/shared/_layout.cshtml";
+}
+@section link{
+}
+@section navlog{
+    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-4 col-6">
+        <a style="text-decoration:none;" href="#Menu"><h1 class="logo">M.Y.O.D S.A</h1></a>
+    </div>
+    <div class="col-xl-7 col-lg-7 col-md-2 col-sm-4 col-2">
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn" style=" border: 3px solid White;
+                                                                       border-radius: 10px;">
+                <i style="margin-right:2px;" class="fas fa-list-ul dropbtn"></i>
+            </button>
+            <div id="show" class="dropdown-content">
+                <a class="li a" href="#Menu">  التصاميم <i class="fas fa-hammer"></i> </a>
+                <a class="li a" href="#search">  البحث  <i class="fas fa-search"></i> </a>
+                <a class="li a" href="#about">  معلومات عنا  <i class="fas fa-address-card"> </i> </a>
+                <a class="li a" href="#Social">  وسائل التواصل <i class="fas fa-headphones-alt"> </i> </a>
+            </div>
+        </div>
+    </div>
+    <div class="Register col-xl-3 col-lg-3 col-md-4 col-sm-4 col-4">
+        <a class="a-log" href="~/Index/Register"> <i style="margin-right:2px;" class="fas fa-user-plus"> </i> اضافة مستخدم </a>
+        <a class="a-log" href="~/Home/Logout"><i style="margin-right:2px;font-size:20px;" class="fas fa-key"></i> تسجيل الخروج </a>
+    </div>
+}
+@section search{
+    <section class="MenSec " data-aos="zoom-in" data-aos-duration="1500">
+
+        <label class="Title" data-aos="flip-right" data-aos-duration="1500"> Design Search</label>
+        <br /><br />
+        @if (Model.Count() == 0)
+        {
+            <h2 class="text-danger" style="text-align:center;"> Sorry , This Design Not Found </h2>
+        }
+        else if (ViewData["GetDetails"] == "")
+        {
+            <h2 class="text-danger" style="text-align:center;"> Please enter the category or Design you want to search for !</h2>
+        }
+        else
+        {
+            if (ViewData["radio"] == "Item")
+            {
+                <button class="show" data-aos="flip-up" data-aos-duration="1500" style="display:flex;padding-bottom:30px;">
+                    <p style="margin-top: -10px;">&clubs; Designs &clubs;</p>
+                </button>
+            }
+            else
+            {
+                <button class="show" data-aos="flip-up" data-aos-duration="1500" style="display:flex;padding-bottom:30px;">
+                    @foreach (var items in Model)
+                    {
+                        <p style="margin-top: -10px;">&clubs; @Html.DisplayFor(w => items.Category.Cat) &clubs;</p>
+                        <m3aty style="margin-left:150px" />
+                        <div style="margin-top: -10px;">
+                            @Html.ActionLink("Edit", "EditCat", "Home", new { id = items.Category.ID, name = items.Category.Cat }, new { @class = "btn Edit-button" })
+                            @Html.ActionLink("Delete", "DeleteCat", "Home", new { id = items.Category.ID, name = items.Category.Cat }, new { @class = "btn delete-button" })
+                        </div>
+                        <br />
+                    }
+
+                </button>
+
+            }
+
+
+            <div class="product">
+
+                @foreach (var item in Model)
+                {
+                    <div class="card-Index" data-aos="flip-down" data-aos-duration="1500">
+                        <div>
+                            <img class="img" src="@Url.Content(item.Path)" alt="@item.name">
+                        </div>
+                        <p class="card-text">&hearts; @Html.DisplayFor(w => item.name) &hearts;</p>
+                        <p class="card-detail">Price : @Html.DisplayFor(w => item.price) pound</p>
+                        <p class="card-detail">Details :@Html.DisplayFor(w => item.Description)</p>
+                        <div style="margin-bottom:10px;">
+                            @Html.ActionLink("Edit", "Edit", "Home", new { id = item.Id, name = item.name }, new { @class = "btn Edit-button" })
+                            @Html.ActionLink("Delete", "Delete", "Home", new { id = item.Id, name = item.name }, new { @class = "btn delete-button" })
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+
+    </section>
+}
+
+

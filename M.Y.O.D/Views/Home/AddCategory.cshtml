@@ -1,0 +1,55 @@
+﻿@model Category
+@{
+    ViewBag.Title = "Add_New_Category";
+    Layout = "~/Views/shared/_layout.cshtml";
+}
+@section link{
+    <link href="~/Content/LogIn.css" rel="stylesheet" />
+    <link href="~/Content/SignUp.css" rel="stylesheet" />
+    <link href="~/Content/Card.css" rel="stylesheet" />
+}
+@section navlog{
+    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-4 col-6">
+        <a style="text-decoration:none;" href="~/Home/Editor"><h1 class="logo">M.Y.O.D S.A</h1></a>
+    </div>
+    <div class="col-xl-7 col-lg-7 col-md-2 col-sm-4 col-2">
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn" style=" border: 3px solid White;
+                                                                       border-radius: 10px;">
+                <i style="margin-right:2px;" class="fas fa-list-ul dropbtn"></i>
+            </button>
+            <div id="show" class="dropdown-content">
+                <a class="li a" href="~/Home/Editor">  التصاميم <i class="fas fa-hammer"></i> </a>
+                <a class="li a" href="#search">  البحث  <i class="fas fa-search"></i> </a>
+                <a class="li a" href="#about">  معلومات عنا  <i class="fas fa-address-card"> </i> </a>
+                <a class="li a" href="#Social">  وسائل التواصل <i class="fas fa-headphones-alt"> </i> </a>
+            </div>
+        </div>
+    </div>
+    <div class="Register col-xl-3 col-lg-3 col-md-4 col-sm-4 col-4">
+        <a class="a-log" href="~/Index/Register"> <i style="margin-right:2px;" class="fas fa-user-plus"> </i> اضافة مستخدم </a>
+        <a class="a-log" href="~/Home/Logout"><i style="margin-right:2px;font-size:20px;" class="fas fa-key"></i> تسجيل الخروج </a>
+    </div>
+}
+<section class="MenSec">
+    <p class="Title">إضافة فئه</p>
+    <div class="Form" style="margin:auto">
+        @using (Html.BeginForm("AddCategory", "Home", FormMethod.Post, new { @class = "form-details" }))
+        {
+            <div>
+                <img src="~/images/salmalogo.png" alt="M.Y.O.D" style="width: 200px;border-radius:15px;">
+            </div>
+            <div class="Items">
+                @Html.LabelFor(ww => ww.Cat, htmlAttributes: new { @class = "label", @style = "width:110px;" }):
+                @Html.EditorFor(ww => ww.Cat, new { htmlattributes = new { @class = "input", @placeholder = "إسم الفئه" } })
+                <br />
+                @Html.ValidationMessageFor(ww => ww.Cat, "", new { @class = " text-danger ", @style = "font-size:16px;" })
+            </div>
+            <div>
+                <input type="submit" class="submit" value="اضافة الفئه">
+                <p style="padding-top:10px;">العوده الى @Html.ActionLink("صفحة_التعديل", "Editor", "Home", new { @class = "logIn" })</p>
+            </div>
+        }
+    </div>
+</section>
+@section search{ }
