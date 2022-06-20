@@ -60,7 +60,7 @@ namespace Graduated.Controllers
             }
             else
             {
-                ModelState.AddModelError("", "Email Or Password Is Wrong !!!");
+                ModelState.AddModelError("", "هناك خطأ في الايميل او الباسورد !!!");
             }
             return View();
         }

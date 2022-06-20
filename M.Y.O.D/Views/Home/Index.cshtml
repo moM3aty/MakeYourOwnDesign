@@ -35,7 +35,7 @@
     @foreach (var item in Model.Categories)
     {
         <button class="show" onclick="openFunction();" data-aos="flip-up" data-aos-duration="1500">
-            <p>&clubs; @item.Cat &clubs;</p>
+            <p>&hearts; @item.Cat &hearts;</p>
         </button>
 
         <div class="product">
@@ -45,11 +45,9 @@
                 {
                     <div class="card-Index" data-aos="flip-down" data-aos-duration="1500">
                         <div>
-                            <img class="img" src="@Url.Content(items.Path)" alt="@items.name">
+                            <img class="img" src="@Url.Content(items.Path)" alt="@items.Category.Cat">
                         </div>
-                        <p class="card-text"> @Html.DisplayFor(w => items.name) &hearts;<p>
-                        <p class="card-detail">السعر : @Html.DisplayFor(w => items.price) جنيه</p>
-                        <p class="card-detail">التفاصيل :@Html.DisplayFor(w => items.Description)</p>
+                        <p class="card-detail"> @Html.DisplayFor(w => items.price) جنيه</p>
                     </div>
 
                 }

@@ -40,7 +40,7 @@
     @foreach (var item in Model.Categories)
     {
         <button class="show" style="display:flex;padding-bottom:30px;" data-aos="flip-up" data-aos-duration="1500">
-            <p class="col-10" style="margin-right:-250px; margin-top:-10px;">&clubs; @item.Cat &clubs;</p>
+            <p class="col-10" style="margin-right:-250px; margin-top:-10px;">&hearts; @item.Cat &hearts;</p>
             <div style="margin-top: -10px;" class="col-2">
                 @Html.ActionLink("تعديل", "EditCat", "Home", new { id = item.ID, name = item.Cat }, new { @class = "btn Edit-button" })
                 @Html.ActionLink("حذف", "DeleteCat", "Home", new { id = item.ID, name = item.Cat }, new { @class = "btn delete-button" })
@@ -54,14 +54,12 @@
                 {
                     <div class="card-Index" data-aos="flip-down" data-aos-duration="1500">
                         <div>
-                            <img class="img" src="@Url.Content(items.Path)" alt="@items.name">
+                            <img class="img" src="@Url.Content(items.Path)" alt="@items.Category.Cat">
                         </div>
-                        <p class="card-text"> @Html.DisplayFor(w => items.name) &hearts;</p>
                         <p class="card-detail"> <span>السعر : </span> @Html.DisplayFor(w => items.price) جنيه</p>
-                        <p class="card-detail"><span>التفاصيل: </span>@Html.DisplayFor(w => items.Description)</p>
                         <div style="margin-bottom:10px;">
-                            @Html.ActionLink("تعديل", "Edit", "Home", new { id = items.Id, name = items.name }, new { @class = "btn Edit-button" })
-                            @Html.ActionLink("حذف", "Delete", "Home", new { id = items.Id, name = items.name }, new { @class = "btn delete-button" })
+                            @Html.ActionLink("تعديل", "Edit", "Home", new { id = items.Id, name = items.Category.Cat }, new { @class = "btn Edit-button" })
+                            @Html.ActionLink("حذف", "Delete", "Home", new { id = items.Id, name = items.Category.Cat}, new { @class = "btn delete-button" })
                         </div>
                     </div>
 

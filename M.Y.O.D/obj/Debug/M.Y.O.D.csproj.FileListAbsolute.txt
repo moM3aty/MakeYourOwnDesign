@@ -58,3 +58,4 @@ E:\Faculty project\M.Y.O.D\M.Y.O.D\obj\Debug\M.Y.O.D.pdb
 E:\Faculty project\M.Y.O.D\M.Y.O.D\obj\Debug\M.Y.O.D.Migrations.initialcreate.resources
 E:\Faculty project\M.Y.O.D\M.Y.O.D\obj\Debug\M.Y.O.D.csproj.GenerateResource.cache
 E:\Faculty project\M.Y.O.D\M.Y.O.D\obj\Debug\M.Y.O.D.Migrations.edit.resources
+E:\Faculty project\M.Y.O.D\M.Y.O.D\obj\Debug\M.Y.O.D.Migrations.edit1.resources

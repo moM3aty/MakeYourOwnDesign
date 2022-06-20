@@ -65,7 +65,7 @@ namespace Graduated.Controllers
             menus.Myfile.SaveAs(fileName);
             acc.Menu_items.Add(menus);
             acc.SaveChanges();
-            return RedirectToAction("Editor");
+            return RedirectToAction("AddNew");
         }
         [Authorize]
         [HttpGet]
@@ -169,54 +169,29 @@ namespace Graduated.Controllers
         [HttpGet]
         public async Task<ActionResult> Search(string searchBy,string search)
         {
-            ViewData["GetDetails"] = search;
-            if (searchBy == "Item")
-            {     
+            ViewData["GetDetails"] = search;  
                 ViewData["radio"]="Item";
                 var Menquery = from x in acc.Menu_items select x;
                 if (!string.IsNullOrEmpty(search))
                 {
-                    Menquery = Menquery.Where(x => x.name.Contains(search));
+                    Menquery = Menquery.Where(x => x.Category.Cat.Contains(search));
                 }
                 return View(await Menquery.AsNoTracking().ToListAsync());
-            }
-            else
-            {
-                var Menquery = from x in acc.Menu_items select x;
-                if (!string.IsNullOrEmpty(search))
-                {
-                    Menquery = Menquery.Where(x => x.Category.Cat.StartsWith(search));
-                }
-                return View(await Menquery.AsNoTracking().ToListAsync());
-            }
-
-
-            
+                
         }
         [Authorize]
         [HttpGet]
         public async Task<ActionResult> SearchEdit(string searchBy, string search)
         {
             ViewData["GetDetails"] = search;
-            if (searchBy == "Item")
-            {
                 ViewData["radio"] = "Item";
                 var Menquery = from x in acc.Menu_items select x;
                 if (!string.IsNullOrEmpty(search))
                 {
-                    Menquery = Menquery.Where(x => x.name.Contains(search));
+                    Menquery = Menquery.Where(x => x.Category.Cat.Contains(search));
                 }
                 return View(await Menquery.AsNoTracking().ToListAsync());
-            }
-            else
-            {
-                var Menquery = from x in acc.Menu_items select x;
-                if (!string.IsNullOrEmpty(search))
-                {
-                    Menquery = Menquery.Where(x => x.Category.Cat.StartsWith(search));
-                }
-                return View(await Menquery.AsNoTracking().ToListAsync());
-            }
+   
         }
     }
 }

@@ -11,11 +11,11 @@ namespace M.Y.O.D.Models
         [Key]
         public int Id { get; set; }
 
-        [Display(Name = "Email :")]
+        [Display(Name = "الايميل :")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [Display(Name = "Password :")]
+        [Display(Name = "الباسورد :")]
         [DataType(DataType.Password)]
         public string pwd { get; set; }
 
